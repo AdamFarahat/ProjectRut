@@ -17,9 +17,13 @@ public class TVInteractable : Interactable
 
     [SerializeField] private Material TVCameraFeedMaterial;
 
+    [SerializeField] private bool isCameraFeed = false;
+
+    [SerializeField] private AudioClip demonHeartBeat;
+
     private bool isPlaying = false;
 
-    [SerializeField] private bool isCameraFeed = false;
+    private AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,6 +43,17 @@ public class TVInteractable : Interactable
         }
 
         _screenRenderer.material = TVOffMaterial;
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource component not found on the TVInteractable object.");
+        }
+
+        if (demonHeartBeat == null)
+        {
+            Debug.LogError("Demon heartbeat audio clip not assigned in the TVInteractable object.");
+        }
     }
 
     public override void Interact(Player player)
@@ -73,5 +88,13 @@ public class TVInteractable : Interactable
         {
             _screenRenderer.material = TVCameraFeedMaterial;
         }
+    }
+
+    public void StartDemonEvent(Player player)
+    {
+        audioSource.clip = demonHeartBeat;
+        audioSource.loop = true;
+        audioSource.Play();
+        StartCoroutine(WaitForVideoToStart());
     }
 }
