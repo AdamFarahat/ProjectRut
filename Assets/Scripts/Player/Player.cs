@@ -10,8 +10,6 @@ public class Player : MonoBehaviour
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] bool isInverted = false;
 
-    [SerializeField] private float cameraSpeed = 100f; // Speed of camera rotation
-
     GameObject _camera;
     private float xRotation = 0f;
     private float yRotation = 0f;
@@ -75,14 +73,14 @@ public class Player : MonoBehaviour
         if (Gamepad.current != null && Gamepad.current.wasUpdatedThisFrame)
         {
             // Analog stick sensitivity multiplier
-            xRotation = lookInput.x * 100f; // Tweak multiplier as needed
-            yRotation = lookInput.y * 100f;
+            xRotation = lookInput.x * gamepadSensitivity; // Tweak multiplier as needed
+            yRotation = lookInput.y * gamepadSensitivity;
         }
         else
         {
             // Mouse input (already in delta)
-            xRotation = lookInput.x * 100f;
-            yRotation = lookInput.y * 100f;
+            xRotation = lookInput.x * mouseSensitivity;
+            yRotation = lookInput.y * mouseSensitivity;
         }
     }
 

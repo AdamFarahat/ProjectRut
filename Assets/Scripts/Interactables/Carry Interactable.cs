@@ -10,8 +10,6 @@ public class CarryInteractable : Interactable
 
     private Player player;
 
-    private static float rotationSpeed = 7.5f; // Speed of rotation when carrying the object
-
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
