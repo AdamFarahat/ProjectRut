@@ -119,12 +119,12 @@
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize.Cube",
-                "value": "{\"m_Value\":{\"x\":13.27092456817627,\"y\":3.5611519813537599,\"z\":-0.21138489246368409}}"
+                "value": "{\"m_Value\":{\"x\":-5.9524335861206059,\"y\":0.10000000149011612,\"z\":4.486301898956299}}"
             },
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize.Door",
-                "value": "{\"m_Value\":{\"x\":-4.329196929931641,\"y\":3.4833312034606935,\"z\":0.830437183380127}}"
+                "value": "{\"m_Value\":{\"x\":2.427018165588379,\"y\":4.128754615783691,\"z\":0.20000000298023225}}"
             },
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
