@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements.InputSystem;
 using UnityEngine.InputSystem.UI;
 
 public class Pause : MonoBehaviour
@@ -13,15 +12,22 @@ public class Pause : MonoBehaviour
 
     public GameObject pauseMenu;
 
+    [SerializeField] private Player playerController;
+
+    [Header("Pause Menu Buttons")]
+
     [SerializeField] private Button resumeButton;
 
     [SerializeField] private Button quitButton;
 
-    [SerializeField] private Player playerController;
+    [Header("Settings")]
+
+    [SerializeField] private GameSettingsSO gameSettingsSO;
 
     private Inventory inventorySystem;
 
-    PlayerStateType previousPlayerState;
+    private PlayerStateType previousPlayerState;
+
 
 
 
@@ -39,6 +45,9 @@ public class Pause : MonoBehaviour
 
         action.Disable();
         inventorySystem = FindAnyObjectByType<Inventory>();
+
+        if (!gameSettingsSO)
+            gameSettingsSO = Resources.Load<GameSettingsSO>("Scriptable Objects/GameSettingsSO");
     }
 
     public void Update()
@@ -52,7 +61,7 @@ public class Pause : MonoBehaviour
                     EventSystem.current.SetSelectedGameObject(resumeButton.gameObject);
                 }
             }
-        }   
+        }
     }
 
     private void DeteminePause()
@@ -113,4 +122,4 @@ public class Pause : MonoBehaviour
         Debug.Log("QuttingGame");
         Application.Quit();
     }
-}
+}   

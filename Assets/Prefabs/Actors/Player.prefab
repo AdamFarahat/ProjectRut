@@ -132,14 +132,13 @@ MonoBehaviour:
   isInverted: 0
   minY: -60
   maxY: 60
-  mouseSensitivity: 100
-  gamepadSensitivity: 100
+  mouseSensitivityMultiplier: 100
+  gamepadSensitivityMultiplier: 5
   carriedObject: {fileID: 0}
   carryPoint: {fileID: 0}
   hitRange: 2.5
-  footstepClip: {fileID: 8300000, guid: 9a774d143428a004f86c9f86e4c4282c, type: 3}
-  footstepInterval: 1
-  minMovementDuration: 0.2
+  playerAudioSource: {fileID: 0}
+  gameSettingsSO: {fileID: 11400000, guid: a3efab0d2fded724c87672e1bdd84afb, type: 2}
 --- !u!114 &383616103278508239
 MonoBehaviour:
   m_ObjectHideFlags: 0
