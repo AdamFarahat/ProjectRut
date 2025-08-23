@@ -54,8 +54,7 @@ public class Inventory : MonoBehaviour
         player = FindAnyObjectByType<Player>();
 
 #if UNITY_EDITOR
-        playerInventorySO.items.Clear();
-        playerInventorySO.currentItemIndex = 0;
+        playerInventorySO.ClearItemsInstance();
 #endif
         // Load info from PlayerInventorySO
         if (playerInventorySO != null)

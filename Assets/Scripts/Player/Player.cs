@@ -27,9 +27,9 @@ public class Player : MonoBehaviour
 
     private float currentXRotation = 0f;  // Track current pitch (vertical rotation)
 
-    [SerializeField] private float mouseSensitivity = 100f; // Mouse sensitivity multiplier
+    [SerializeField] private float mouseSensitivityMultiplier = 200f; // Mouse sensitivity multiplier
 
-    [SerializeField] private float gamepadSensitivity = 5f; // Gamepad analog stick sensitivity multiplier
+    [SerializeField] private float gamepadSensitivityMultiplier = 5f; // Gamepad analog stick sensitivity multiplier
 
     private Vector2 lookInput;
 
@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
     private HUD HUD;
 
     public AudioSource playerAudioSource;
+
+    [SerializeField] private GameSettingsSO gameSettingsSO;
 
     public void Awake()
     {
@@ -107,6 +109,12 @@ public class Player : MonoBehaviour
         {
             playerAudioSource = gameObject.AddComponent<AudioSource>();
             playerAudioSource.playOnAwake = false;
+        }
+
+        // Game Settings
+        if (!gameSettingsSO)
+        {
+            gameSettingsSO = Resources.Load<GameSettingsSO>("Scriptable Objects/GameSettingsSO");
         }
     }
 
@@ -198,6 +206,8 @@ public class Player : MonoBehaviour
         }
 
         lookInput = lookInput.normalized;
+        float gamepadSensitivity = gameSettingsSO.mouseSensitivity * gamepadSensitivityMultiplier;
+        float mouseSensitivity = gameSettingsSO.mouseSensitivity * mouseSensitivityMultiplier;
 
         if (Gamepad.current != null && Gamepad.current.wasUpdatedThisFrame)
         {
