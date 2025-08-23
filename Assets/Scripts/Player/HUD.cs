@@ -39,13 +39,16 @@ public class HUD : MonoBehaviour
 #endif
         }
 
-
-        endGamePanel.SetActive(false);
-
+    if (endGamePanel != null)
+            endGamePanel.SetActive(false);
+        
         endGameVolume = GameObject.Find("End Game Volume");
     }
+    
+    
 
-    public void QuitGame() {
+    public void QuitGame()
+    {
         Debug.Log("QuitGame");
         Application.Quit();
     }
