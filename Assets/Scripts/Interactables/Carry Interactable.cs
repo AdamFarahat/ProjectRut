@@ -97,7 +97,7 @@ public class CarryInteractable : Interactable
             player.carriedObject = this.gameObject;
         }
 
-        
+        rb.constraints = RigidbodyConstraints.None;
     }
 
     public void DisableFixedJoint()
@@ -108,6 +108,7 @@ public class CarryInteractable : Interactable
             Destroy(carryJoint);
             carryJoint = null;
         }
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     public void RotateObject(InputAction.CallbackContext context)

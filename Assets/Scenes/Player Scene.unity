@@ -421,6 +421,7 @@ Transform:
   - {fileID: 996066438}
   - {fileID: 1370737601}
   - {fileID: 29364091}
+  - {fileID: 849621595}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &394989091
@@ -460,15 +461,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7585431582444560773, guid: e1804b8358049cf43b88a519a4638425, type: 3}
   m_PrefabInstance: {fileID: 3273590030883632172}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417265258}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.503331, y: 1.5521983, z: 1.6971369}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 379479890}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450299139
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,6 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0663e014ecf89544b1ad39b71ab7547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   carryJoint: {fileID: 0}
 --- !u!1 &546492053
 GameObject:
@@ -1303,9 +1296,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 891808961}
+  playerController: {fileID: 840569747}
   resumeButton: {fileID: 2046675676}
   quitButton: {fileID: 546492055}
-  playerController: {fileID: 840569747}
+  gameSettingsSO: {fileID: 0}
 --- !u!4 &748793476
 Transform:
   m_ObjectHideFlags: 0
@@ -1441,6 +1435,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaea91b1caa02b54da40746d14e1733e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &849621594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849621595}
+  m_Layer: 0
+  m_Name: UIInteractable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &849621595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849621594}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 379479890}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &851165781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,6 +1830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0663e014ecf89544b1ad39b71ab7547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   carryJoint: {fileID: 0}
 --- !u!54 &996066434
 Rigidbody:
@@ -2479,7 +2505,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1402381014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd3210d521f8024da1fc0761ec70f2e, type: 3}
+  m_Script: {fileID: 11500000, guid: ffcc19e1f234a80409f0d675c991600d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1450159660 stripped
